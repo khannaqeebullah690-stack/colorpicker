@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true"><span></span></div>
+      <div>
+        <p class="eyebrow">UTILITY / 01</p>
+        <h1>Color Picker</h1>
+      </div>
+      <div class="status-dot" title="Ready"></div>
+    </header>
+
+    <section class="preview-panel" aria-live="polite" style="position: relative; cursor: pointer;">
+      <input type="color" id="nativeColorPicker" style="position: absolute; opacity: 0; width: 100%; height: 100%; cursor: pointer; left: 0; top: 0;" aria-label="Pick any color from palette">
+      <div class="color-preview" id="colorPreview"></div>
+      <div class="preview-meta">
+        <span class="label">CURRENT COLOR</span>
+        <strong id="hexValue">#E8E4DD</strong>
+      </div>
+    </section>
+
+    <button class="pick-button" id="pickButton" type="button">
+      <span class="crosshair" aria-hidden="true">+</span>
+      Pick a color
+      <span class="shortcut">SPACE</span>
+    </button>
+
+    <p class="message" id="message" role="status"></p>
+
+    <section class="values" aria-label="Color values">
+      <div class="value-row">
+        <span class="value-label">HEX</span>
+        <input type="text" id="hexCode" value="#E8E4DD" class="value-input">
+        <button class="copy-button" data-copy="hexCode" type="button" aria-label="Copy HEX value">COPY</button>
+      </div>
+      <div class="value-row">
+        <span class="value-label">RGB</span>
+        <input type="text" id="rgbCode" value="232, 228, 221" class="value-input">
+        <button class="copy-button" data-copy="rgbCode" type="button" aria-label="Copy RGB value">COPY</button>
+      </div>
+      <div class="value-row">
+        <span class="value-label">HSL</span>
+        <input type="text" id="hslCode" value="36, 18%, 89%" class="value-input">
+        <button class="copy-button" data-copy="hslCode" type="button" aria-label="Copy HSL value">COPY</button>
+      </div>
+    </section>
+
+    <section class="recent-section">
+      <div class="section-heading">
+        <span class="label">RECENT COLORS</span>
+        <button class="clear-button" id="clearButton" type="button">Clear all</button>
+      </div>
+      <div class="swatches" id="swatches" aria-label="Recent colors"></div>
+    </section>
+
+    <footer>Click the picker, then select any color on your screen.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

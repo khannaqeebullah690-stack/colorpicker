@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Color Picker",
+  "version": "1.0.0",
+  "description": "Pick colors from any webpage and copy HEX, RGB, and HSL values.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Color Picker"
+  },
+  "permissions": ["activeTab", "scripting", "storage"]
+}
